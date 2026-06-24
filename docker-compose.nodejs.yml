@@ -2,7 +2,8 @@ services:
    app1:
     build :
       context: ./
-    image: sample-port-app
+      dockerfile: Dockerfile.nodejs
+    image: sample-port-app-nodejs
     container_name: app1
     environment :
      - NODENUMBER=1
@@ -11,7 +12,7 @@ services:
      - sample-app-used-port
 
    app2:
-    image: sample-port-app
+    image: sample-port-app-nodejs
     container_name: app2
     environment :
      - NODENUMBER=2
@@ -22,7 +23,8 @@ services:
    auto-app:
     build :
       context: ./
-    image: sample-port-app
+      dockerfile: Dockerfile.nodejs
+    image: sample-port-app-nodejs
     environment :
      - NODENUMBER=auto-node
     networks:
